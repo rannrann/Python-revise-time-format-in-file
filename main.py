@@ -1,5 +1,4 @@
 import re
-import os
 
 
 
@@ -20,6 +19,10 @@ def time_format(line):
 
 
 if __name__ == "__main__":
+    new_text=""
     with open('text.txt','r') as f:
         for line in f.readlines():
-            print(line)
+            new_text+=time_format(line)
+
+    with open('text.txt','w') as f:
+        f.write(new_text)
